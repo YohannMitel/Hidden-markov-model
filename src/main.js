@@ -17,7 +17,17 @@ const router = createRouter({
     routes,
 })
 
+router.beforeEach((to, from, next) => {
+    router.routeFrom = from.name
+    router.routeTo = to.name
+    if(!(to.name == "empty" )){
+        router.pathFrom = from.path.replace('/', '') == '' ? undefined : from.path.replace('/', '')
+        router.pathTo = to.path.replace('/', '') == '' ? undefined : to.path.replace('/', '')
 
+        
+    }
+    next()
+})
 const app = createApp(App)
 
 app.use(router)
