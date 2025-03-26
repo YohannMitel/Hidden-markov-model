@@ -7,6 +7,9 @@
 
 <script setup>
 import { onMounted } from 'vue';
+// Import Tabulator JS
+import Tabulator from 'tabulator-tables/dist/js/tabulator.min.js';
+
 
 const props = defineProps({
     tableData: Array
@@ -36,6 +39,3 @@ var table = new Tabulator("#table", {
 
 
 </script>
-<style>
-@import "../libs/tabulator/tabulator_bootstrap5.min.css";
-</style>

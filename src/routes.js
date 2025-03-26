@@ -10,6 +10,7 @@ import Empty from "./views/Empty.vue"
 
 
 export const routes = [
+    {path: '/', redirect: '/0'},
     {path:'/empty', component: Empty, name: 'empty'},
     {path: '/0', component: ViewZero, name: 'viewZero', matrixIndex: 0},
     {path: '/1', component: ViewOne, name: 'viewOne', matrixIndex: 1},

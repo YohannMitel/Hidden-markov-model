@@ -7,13 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import Bootstrap JS (optionnel, si vous avez besoin des composants JavaScript de Bootstrap comme les modals, tooltips, etc.)
 import 'bootstrap';
-import "/src/libs/tabulator/tabulator.min.js";
+// Import Tabulator CSS
+import 'tabulator-tables/dist/css/tabulator_bootstrap5.min.css';
+
+
+
+
 import {routes} from "./routes.js"
-import { createRouter,createWebHistory } from 'vue-router'
-import VueApexCharts from "vue3-apexcharts";
+import { createRouter,createWebHashHistory,createWebHistory } from 'vue-router'
+
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
 })
 
@@ -29,7 +34,5 @@ router.beforeEach((to, from, next) => {
     next()
 })
 const app = createApp(App)
-
 app.use(router)
-app.use(VueApexCharts);
 app.mount('#app')
